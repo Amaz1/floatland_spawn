@@ -49,7 +49,7 @@ local function spawn_point()
 	local noise_height = minetest.get_perlin(noise_h)
 	local noise_mount = minetest.get_perlin(noise_m)
 	local base_max = floatland_y
-	local y = 1283
+	local y = floatland_y + 3
 	for i = 1, 10000 do
 	    local x = math.random(-2000, 2000)
 	    local z = math.random(-2000, 2000)
@@ -62,12 +62,12 @@ local function spawn_point()
 			local amp = n_base * n_base_height
 			local ridge = n_base_height / 3
 			--if amp > ridge * 2 then -- Lakebed
-			--	base_max = 1280 - (amp - ridge * 2) / 2
+			--	base_max = floatland_y - (amp - ridge * 2) / 2
 			--else -- Normal terrain
 			if amp < ridge * 2 then
 				local diff = math.abs(amp - ridge) / ridge
 				local smooth_diff = diff * diff * (3 - 2 * diff)
-				base_max = 1280 + ridge - smooth_diff * ridge
+				base_max = floatland_y + ridge - smooth_diff * ridge
 			end
 			return {x = x, y = base_max + 2, z = z}
 		end
