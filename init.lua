@@ -37,6 +37,9 @@ local floatland_y = minetest.get_mapgen_setting("mgv7_floatland_level") or 1280
 local mount_height = minetest.get_mapgen_setting("mgv7_float_mount_height") or 128
 local mount_dens = minetest.get_mapgen_setting("mgv7_float_mount_density") or 0.6
 
+minetest.set_mapgen_setting("mg_name", "v7", true)
+minetest.set_mapgen_setting("mgv7_spflags", "floatlands", true)
+
 -- Based on these two funcs:
 -- https://github.com/minetest/minetest/blob/28841961ba91b943b7478704181604fa3e24e81e/src/mapgen_v7.cpp#L415
 -- https://github.com/minetest/minetest/blob/28841961ba91b943b7478704181604fa3e24e81e/src/mapgen_v7.cpp#L428
